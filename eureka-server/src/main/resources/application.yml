@@ -1,0 +1,23 @@
+system-name:
+  server-eureka
+
+server:
+  #运行端口
+  port: 8788
+eureka:
+  instance:
+    #注册ip
+    hostname: localhost
+  client:
+    #禁止自己当做服务注册
+    register-with-eureka: false
+    #屏蔽注册信息
+    fetch-registry: false
+    #注册url
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #开启自我保护模式（开启状态下服务停掉eureka不会立即清除掉宕掉的服务，所以false）
+    enable-self-preservation: true
+    #清理无效节点,默认60*1000毫秒,即60秒
+    eviction-interval-timer-in-ms: 5000
