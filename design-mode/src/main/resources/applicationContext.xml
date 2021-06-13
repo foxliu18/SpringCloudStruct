@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                       http://www.springframework.org/schema/beans/spring-beans.xsd
+                       http://www.springframework.org/schema/context
+                       http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+<!--    <bean id="user" class="com.designmode.autowiring.mode.User" autowire="byName">-->
+<!--        <property name="str" value="qinjiang"/>-->
+<!--    </bean>-->
+
+    <bean id="dog" class="com.designmode.autowiring.mode.Dog"/>
+    <bean id="cat" class="com.designmode.autowiring.mode.Cat"/>
+    <bean id="user" class="com.designmode.annotate.mode.User"/>
+
+<!--    <bean id="user" class="com.designmode.autowiring.mode.User">-->
+<!--        <property name="cat" ref="cat"/>-->
+<!--        <property name="dog" ref="dog"/>-->
+<!--        <property name="str" value="qinjiang"/>-->
+<!--    </bean>-->
+
+    <!--P(属性: properties)命名空间 , 直接注入属性-->
+<!--    <bean id="userP" class="com.designmode.DI.mode.User" p:name="Jack" p:age="18"/>-->
+
+<!--    &lt;!&ndash;C(构造: Constructor)命名空间 , 使用构造器注入&ndash;&gt;-->
+<!--    <bean id="userC" class="com.designmode.DI.mode.User" c:name="Mike" c:age="19"/>-->
+
+<!--    <bean id="addr" class="com.designmode.DI.mode.Address">-->
+<!--        <property name="address" value="重庆"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="student" class="com.designmode.DI.mode.Student">-->
+<!--        <property name="name" value="小明"/>-->
+<!--        <property name="address" ref="addr"/>-->
+<!--        <property name="books">-->
+<!--            <array>-->
+<!--                <value>西游记</value>-->
+<!--                <value>红楼梦</value>-->
+<!--                <value>水浒传</value>-->
+<!--            </array>-->
+<!--        </property>-->
+<!--        <property name="hobbys">-->
+<!--            <list>-->
+<!--                <value>听歌</value>-->
+<!--                <value>看电影</value>-->
+<!--                <value>爬山</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="card">-->
+<!--            <map>-->
+<!--                <entry key="中国邮政" value="456456456465456"/>-->
+<!--                <entry key="建设" value="1456682255511"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--        <property name="games">-->
+<!--            <set>-->
+<!--                <value>LOL</value>-->
+<!--                <value>BOB</value>-->
+<!--                <value>COC</value>-->
+<!--            </set>-->
+<!--        </property>-->
+<!--        <property name="wife"><null/></property>-->
+<!--        <property name="info">-->
+<!--            <props>-->
+<!--                <prop key="学号">20190604</prop>-->
+<!--                <prop key="性别">男</prop>-->
+<!--                <prop key="姓名">小明</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
+</beans>

@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--<context:annotation-config/>-->
+    <!--指定注解扫描包-->
+    <context:component-scan base-package="com.designmode"/>
 
-    <!--bean就是java对象 , 由Spring创建和管理-->
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor "/>
+
+    <bean id="dog" class="com.designmode.autowiring.mode.Dog"/>
+    <bean id="cat1" class="com.designmode.autowiring.mode.Cat"/>
+    <bean id="cat2" class="com.designmode.autowiring.mode.Cat"/>
+    <bean id="user" class="com.designmode.annotate.mode.User">
+        <property name="str" value="Max"/>
+    </bean>
+
+    <!--<bean id="MysqlImpl" class="com.designmode.IOC.Dao.UserDaoMyImpl"/>
+    <bean id="OracleImpl" class="com.designmode.IOC.Dao.UserDaoOracleImpl"/>
+
+    <bean id="ServiceImpl" class="com.designmode.IOC.service.UserServiceImpl">
+        &lt;!&ndash;注意: 这里的name并不是属性 , 而是set方法后面的那部分 , 首字母小写&ndash;&gt;
+        &lt;!&ndash;引用另外一个bean , 不是用value 而是用 ref&ndash;&gt;
+        <property name="userDao" ref="OracleImpl"/>
+    </bean>
+
+    &lt;!&ndash;bean就是java对象 , 由Spring创建和管理&ndash;&gt;
     <bean id="hello" class="com.designmode.IOC.mode.Hello">
         <property name="name" value="Spring"/>
     </bean>
+
+    <bean id="user" class="com.designmode.IOC.mode.User">
+        <property name="name" value="Spring"/>
+    </bean>
+
+    &lt;!&ndash;三种有参构造方法&ndash;&gt;
+    <bean id="userT1" class="com.designmode.IOC.mode.UserT">
+        <constructor-arg index="0" value="T1"/>
+    </bean>
+
+    <bean id="userT2" class="com.designmode.IOC.mode.UserT">
+        <constructor-arg name="name" value="T2"/>
+    </bean>
+
+    <bean id="userT3" class="com.designmode.IOC.mode.UserT">
+        <constructor-arg type="java.lang.String" value="T3"/>
+    </bean>-->
 </beans>
