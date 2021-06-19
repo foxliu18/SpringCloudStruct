@@ -16,6 +16,7 @@ public class ProxyApplication {
         DynamicProxyInvocationHandler pih = new DynamicProxyInvocationHandler();
         pih.setTarget(userService); //设置要代理的对象
         UserService proxy = (UserService)pih.getProxy(); //动态生成代理类！
+        System.out.println("--------------------------------");
         proxy.add();
         proxy.delete();
     }
