@@ -8,7 +8,7 @@ spring:
  application:
   name: app-${system-name}
  datasource:
-  driver-class-name : com.mysql.jdbc.Driver
+  driver-class-name : com.mysql.cj.jdbc.Driver
   url: jdbc:mysql://127.0.0.1:3307/savi-sys?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
   username: root
   password: 1234
@@ -26,3 +26,6 @@ eureka:
   serviceUrl:
    #服务注册地址
    defaultZone: http://localhost:8788/eureka/
+
+mybatis:
+ mapper-locations: classpath:Mapper/*.xml
